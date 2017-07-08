@@ -17,8 +17,9 @@ public class VisitInsert extends HttpServlet {
        
 	protected void processRequest(HttpServletRequest request,HttpServletResponse response)
 			throws ServletException,IOException{
-		request.setCharacterEncoding("euc-kr");//한글처리
-		//client가 http요청으로 전송한 값 읽기
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
+		//클라이언트가 http요청으로 전송한 값 읽기
 		String writer = request.getParameter("writer");
 		String memo = request.getParameter("memo");
 		System.out.println("작성자 : " + writer);
@@ -31,7 +32,7 @@ public class VisitInsert extends HttpServlet {
 		PreparedStatement pstmt = null;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","scott","tiger");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","scott","tiger");
 			pstmt = con.prepareStatement(sql.toString());
 			pstmt.setString(1, writer);
 			pstmt.setString(2, memo);
