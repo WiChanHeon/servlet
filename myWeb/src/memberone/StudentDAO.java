@@ -20,7 +20,7 @@ public class StudentDAO {
 		try {
 			Context init = new InitialContext();
 			DataSource ds =
-					(DataSource)init.lookup("java:comp/env/jdbc/scott");
+					(DataSource)init.lookup("java:comp/env/jdbc/myOracle");
 			conn = ds.getConnection();
 		} catch (Exception e) {
 			System.err.println("Connectiton 생성실패");
@@ -99,11 +99,12 @@ public class StudentDAO {
 			pstmt.setString(3, vo.getName());
 			pstmt.setString(4, vo.getPhone1());
 			pstmt.setString(5, vo.getPhone2());
-			pstmt.setString(6, vo.getEmail());
-			pstmt.setString(7, vo.getZipcode());
-			pstmt.setString(8, vo.getAddress1());
-			pstmt.setString(9, vo.getAddress2());
-			pstmt.setString(10, vo.getPhone3());
+			pstmt.setString(6, vo.getPhone3());
+			pstmt.setString(7, vo.getEmail());
+			pstmt.setString(8, vo.getZipcode());
+			pstmt.setString(9, vo.getAddress1());
+			pstmt.setString(10, vo.getAddress2());
+			
 			int count = pstmt.executeUpdate();
 			if(count>0)flag = true;
 		} catch (Exception ex) {
