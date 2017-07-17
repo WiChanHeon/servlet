@@ -19,7 +19,7 @@ public class BoardDAO {
 		return instance;
 	}
 	//게시판 기능 메소드
-	public List<BoardVO> getArticles() {//테이블 데이터 가져오기 메소드
+	public List<BoardVO> getArticles(int start,int end) {//테이블 데이터 가져오기 메소드
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -28,10 +28,15 @@ public class BoardDAO {
 		try {
 			conn = ConnUtil.getConnection();
 			
-			pstmt = conn.prepareStatement("select * from board order by num desc");
+			pstmt = conn.prepareStatement(""
+					+ "select * from (select rownum rnum, num, writer, email, subject, pass,"
+					+ "regdate, readcount, ref, step, depth, content, ip from (select * from board order by ref desc,step asc))"
+					+ "where rnum>=? and rnum<=?");
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				articleList = new ArrayList<BoardVO>();
+				articleList = new ArrayList<BoardVO>(end-start+1);
 				do {
 					BoardVO article = new BoardVO();
 					article.setNum(rs.getInt("num"));
