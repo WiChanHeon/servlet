@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@page import = "boardone.BoardDAO" %>    
 <%@page import = "java.sql.Timestamp" %>
+<% request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="article" scope="page" class="boardone.BoardVO">
 	<jsp:setProperty name="article" property="*"/>
 </jsp:useBean>  
