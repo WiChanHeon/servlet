@@ -45,6 +45,8 @@ CREATE table "STUDENT" (
 	"ADDRESS2" VARCHAR2(20) NOT NULL,
 	constraint "STUDENT_PK" primary key("ID")
 );
+
+
 //우편번호 테이블
 create table "ZIPCODE"(
     "SEQ" NUMBER(5,0) NOT NULL,
@@ -58,6 +60,8 @@ create table "ZIPCODE"(
     "BUNJI1" VARCHAR2(20),
     constraint "ZIPCODE_PK" primary key("SEQ")
 );
+
+
 //게시판 테이블
 CREATE TABLE "BOARD"(
 	"NUM" NUMBER(7,0) NOT NULL ENABLE,
@@ -74,6 +78,8 @@ CREATE TABLE "BOARD"(
 	"IP" VARCHAR(20) NOT NULL ENABLE,
 	constraint "BOARD_PK" primary key("NUM") ENABLE
 );
+
+
 //게시판 시퀀스
 CREATE SEQUENCE board_seq
 	START WITH 1
