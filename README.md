@@ -26,10 +26,11 @@ URL: http://localhost:8080/myWeb/fileupload/fileSelect.jsp
 URL: http://localhost:8080/myWeb/memberone/login.jsp
 
 ### 개발 환경 ### 
-    Programming Language - Java 1.7
+    Programming Language - Java 1.8
     IDE - Eclipse
     DB - OracleDB 
-    Framework - Servlet
+    WAS - Tomcat 8.0
+    Framework - Servlet
     
 ### 설치 ###
 
