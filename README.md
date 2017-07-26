@@ -10,16 +10,20 @@
 - Read:   사용자 입력 내용 보기
 - Delete: 지정된 게시물 삭제
 
-URL: http://localhost:8080/myweb/board1List
+URL: http://localhost:8080/myWeb/boardone/list.jsp
 
 ### 2. fileupload ###
+- UploadForm: 기본 파일 업로드 폼
+- fileSelect: 다중 파일 업로드 폼
 
-URL: http://localhost:8080/myweb/board2List
+URL: http://localhost:8080/myWeb/fileupload/fileUploadForm.jsp
+URL: http://localhost:8080/myWeb/fileupload/fileSelect.jsp
 
 ### 3. memberone ###
-- List: 검색, 제목을 한 줄로 표시 ==> 페이징을 공통으로 
-- Form: 필수입력, 수정/저장 서비스 하나로
-- Read: 스크립트 실행 방지
+- Login: 로그인 및 회원가입
+- regForm: 회원가입 폼 및 우편번호검색기능
+
+URL: http://localhost:8080/myWeb/memberone/login.jsp
 
 ### 개발 환경 ### 
     Programming Language - Java 1.7
