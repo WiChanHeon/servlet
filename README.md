@@ -1,5 +1,5 @@
 ## Servlet + MVC1 + Oracle DB 기반 게시판 ##
-본 샘플은  Servlet + MVC1 + Oracle DB 기반으로 방명록,게시판,파일업로드를 구현한 샘플입니다.
+본 샘플은  Servlet + MVC1 + Oracle DB 기반으로 로그인 및 회원가입,게시판,파일업로드를 구현한 샘플입니다.
 
 각 내용은 다음과 같이 구성되었습니다.
 
